@@ -59,9 +59,9 @@ set(BUNDLE_SUPPORTED_QUALS ${BUNDLE_SUPPORTED_QUALS_INIT}
 string(REPLACE ";" "|" BUNDLE_SUPPORTED_QUALS_STRING "${BUNDLE_SUPPORTED_QUALS}")
 
 # Define version set for desired version of art suite.
-set(version_set CACHE STRING "${BUNDLE_VERSION_SET}")
+set(version_set "${BUNDLE_VERSION_SET}")
 # for use in html
-set( supported_quals_string CACHE STRING "${BUNDLE_SUPPORTED_QUALS_STRING}")
+set( supported_quals_string "${BUNDLE_SUPPORTED_QUALS_STRING}")
 
 # Legacy build-base.
 create_version_variables(build_base_classic v6_3_0)
@@ -105,7 +105,7 @@ create_version_variables(cetmodules LIST
 # create_version_variables(cetbuildtools LIST )
 # mrb
 create_version_variables(mrb_stack v6_09_05)
-create_version_variables(mrb LIST ${MRB_STACK_VERSION})
+create_version_variables(mrb ${MRB_STACK_VERSION})
 create_version_variables( hub v2_14_2 )
 
 # art_suite
@@ -122,8 +122,10 @@ create_version_variables(art_root_io v1_11_03)
 
 # lite framework
 create_version_variables(gallery v1_20_02)
+
 # Tutorial
 create_version_variables(toyExperiment v0_08_03)
+
 create_version_variables(cry v1_7p)
 create_version_variables(TRACE v3_17_09)
 create_version_variables(artdaq_core v3_09_11)
@@ -190,6 +192,7 @@ create_version_variables(g4radiative v5_6)
 create_version_variables(g4surface v2_2)
 create_version_variables(g4tendl v1_4)
 create_version_variables(g4incl v1_0)
+create_version_variables(geant4reweight v01_19_01)
 
 # the latest releases of artg4tk are really part of larsoft
 create_version_variables(artg4tk v07_00_01)
@@ -312,7 +315,6 @@ create_version_variables(leveldb v1_20c)
 ##create_version_variables(glog v0_3_5b)
 create_version_variables(protobuf v3_5_2a)
 create_version_variables(lmdb v0_9_23)
-create_version_variables(opencv v3_4_2a)
 
 ########################################################################
 # Sphinx et al.
@@ -361,6 +363,7 @@ create_version_variables(libtorch v1_13_1b)
 create_version_variables(libtorch_dist NAME libtorch ${LIBTORCH_VERSION})
 create_version_variables(triton v2_25_0b)
 create_version_variables(triton_dist NAME triton ${TRITON_VERSION})
+
 # TAUOLA C++ and friends
 create_version_variables(hepmc3 v3_2_5)
 create_version_variables(pythia8 v8_3_08)
@@ -420,10 +423,13 @@ init_shell_fragment_vars()
 define_build_base()
 
 ########################################################################
-# UPS distributions.
+# No calls to create_version_variables() beyond this point.
+########################################################################
+# These files should be copied to SciSoft for each release.
 
 # Define derivative variables used during expansion of distribution
 # config files.
+
 string(REGEX REPLACE "\\." "" ART_NOSEP_VERSION "${ART_DOT_VERSION}")
 string(REGEX REPLACE "\\." "" GALLERY_NOSEP_VERSION "${GALLERY_DOT_VERSION}")
 execute_process(COMMAND date
@@ -431,16 +437,31 @@ execute_process(COMMAND date
   OUTPUT_STRIP_TRAILING_WHITESPACE )
 
 # Define and generate UPS distribution configurations.
-distribution(cstxsd)
-distribution(ifdh)
-distribution(libtorch)
+
+# nu (NOvA uses nu and nulite).
+distribution(cstxsd_dist)
 distribution(nubase)
-distribution(nu)
+distribution(nu WITH_HTML)
+# nulite (LArSoft uses nulite, but not nu).
+
 distribution(nulite_base)
 distribution(nulite WITH_HTML)
-distribution(tauola)
-distribution(tensorflow)
-distribution(triton)
+
+# ifdh.
+distribution(ifdh)
+
+# libtorch.
+distribution(libtorch_dist)
+
+# triton.
+distribution(triton_dist)
+
+# tensorflow.
+distribution(tensorflow_dist)
+
+# Tauola C++ & friends.
+distribution(tauola_dist)
+
 
 ########################################################################
 # Spack environments (bundles)
