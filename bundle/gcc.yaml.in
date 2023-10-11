@@ -1,0 +1,72 @@
+# -*- YAML -*-
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  definitions:
+  - compiler: [${NATIVE_COMPILER_SPEC}]
+  specs:
+  - >-
+    ${MAIN_COMPILER_BUILD_SPEC} %${NATIVE_COMPILER_SPEC}
+  view: true
+${EXTRA_ENV_CONFIG}
+    autoconf:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    autoconf-archive:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    automake:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    binutils:
+      require:
+      - '+gas+gold+ld+lto+plugins'
+      - '%${NATIVE_COMPILER_SPEC}'
+      - '@${BINUTILS_SPACK_VERSION}'
+    diffutils:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    gawk:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    gcc:
+      require:
+      - '+binutils+bootstrap+graphite+profiled+strip~nvptx'
+      - build_type=Release
+      - languages=c,c++,fortran,lto
+    gmake:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    gmp:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    isl:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    libtool:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    m4:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    mpc:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    mpfr:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    perl:
+      require:
+      - '+open+opcode'
+      - '%${NATIVE_COMPILER_SPEC}'
+    texinfo:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    zlib:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    zstd:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'

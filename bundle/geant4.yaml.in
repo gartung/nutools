@@ -1,0 +1,168 @@
+# -*- YAML -*-
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  definitions:
+  - compiler: [${MAIN_COMPILER_SPEC}]
+  specs:
+    - matrix:
+      - [builtin.geant4]
+      - ['~vecgeom', '+vecgeom']
+      - ['~threads', '+threads']
+      - ['~qt', '+qt']
+      exclude:
+        - geant4 +vecgeom +qt
+        - geant4 +threads +qt
+  view:
+    default:
+      root: .spack-env/view/default
+      exclude: ['+qt+threads+vecgeom']
+      link_type: symlink
+      link: all
+    G4-vecgeom:
+      root: .spack-env/view/G4-vecgeom
+      exclude: ['~vecgeom']
+      link_type: symlink
+      link: all
+    G4-threads:
+      root: .spack-env/view/G4-vecgeom
+      exclude: ['~threads']
+      link_type: symlink
+      link: all
+    G4-QT:
+      root: .spack-env/view/G4-QT
+      exclude: ['~qt']
+      link_type: symlink
+      link: all
+${EXTRA_ENV_CONFIG}
+    assimp:
+      require:
+      - '%${MAIN_COMPILER_SPEC}'
+#      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    binutils:
+      require:
+      - '+gas+gold+ld+lto+plugins'
+      - '%${NATIVE_COMPILER_SPEC}'
+      - '@${BINUTILS_SPACK_VERSION}'
+    boost:
+      require:
+      - '@${BOOST_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    cairo:
+      require:
+      - '+X+gobject+png'
+      - '%${NATIVE_COMPILER_SPEC}'
+    catch2:
+      require:
+      - '%${MAIN_COMPILER_SPEC}'
+      - build_type=Release
+    clhep:
+      require:
+      - '@${CLHEP_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+      - build_type=Release
+    cmake:
+      require:
+      - '~ownlibs'
+      - '%${NATIVE_COMPILER_SPEC}'
+      - build_type=Release
+    doxygen:
+      require:
+      - '%${MAIN_COMPILER_SPEC}'
+      - build_type=Release
+    fftw:
+      require:
+      - '~mpi+openmp'
+      - '%${NATIVE_COMPILER_SPEC}'
+    freetype:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    ftgl:
+      require:
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+      - build_type=Release
+    builtin.geant4:
+      require:
+      - '@${GEANT4_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+      - build_type=${BUNDLE_CMAKE_BUILD_TYPE}
+    geant4-data:
+      require:
+      - '@${GEANT4_SPACK_VERSION}'
+      - '%${NATIVE_COMPILER_SPEC}'
+    git:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    gl2ps:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    glew:
+      require:
+      - '@${GLEW_SPACK_VERSION}'
+      - '%${NATIVE_COMPILER_SPEC}'
+    glx:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    gmake:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    gobject-introspection:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    harfbuzz:
+      require:
+      - '%${MAIN_COMPILER_SPEC}'
+#      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    hwloc:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    icu4c:
+      require:
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    libtiff:
+      require:
+      - '%${MAIN_COMPILER_SPEC}'
+#      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    libuv:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
+    qt:
+      require:
+      - '+gui'
+      - '@${QT_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+#      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    veccore:
+      require:
+      - '@${VECCORE_SPACK_VERSION}'
+      - '%${NATIVE_COMPILER_SPEC}'
+      - build_type=Release
+    vecgeom:
+      require:
+      - '@${VECGEOM_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+      - build_type=Release
+    builtin.xerces-c:
+      require:
+      - '@${XERCES_C_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
