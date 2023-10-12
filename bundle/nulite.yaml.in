@@ -119,7 +119,7 @@ ${EXTRA_ENV_CONFIG}
       - build_type=${BUNDLE_CMAKE_BUILD_TYPE}
     cetmodules:
       require:
-      - '+versioned-docs'
+      - '~versioned-docs'
       - '@${CETMODULES_SPACK_VERSION}'
       - '%${NATIVE_COMPILER_SPEC}'
       - build_type=Release
@@ -148,10 +148,6 @@ ${EXTRA_ENV_CONFIG}
       - '%${MAIN_COMPILER_SPEC}'
       ${MAIN_COMPILER_CXX_STANDARD_OPT}
       ${MAIN_COMPILER_CXXFLAGS}
-    data-dispatcher:
-      require:
-      - '@${DATA_DISPATCHER_SPACK_VERSION}'
-      - '%${NATIVE_COMPILER_SPEC}'
     doxygen:
       require:
       - '%${MAIN_COMPILER_SPEC}'
@@ -275,13 +271,6 @@ ${EXTRA_ENV_CONFIG}
     json-c:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
-    kinkal:
-      require:
-      - '@${KINKAL_SPACK_VERSION}'
-      - '%${MAIN_COMPILER_SPEC}'
-      ${MAIN_COMPILER_CXX_STANDARD_OPT}
-      ${MAIN_COMPILER_CXXFLAGS}
-      - build_type=Release
     libarchive:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
@@ -354,13 +343,6 @@ ${EXTRA_ENV_CONFIG}
     messagefacility:
       require:
       - '@${MESSAGEFACILITY_SPACK_VERSION}'
-      - '%${MAIN_COMPILER_SPEC}'
-      ${MAIN_COMPILER_CXX_STANDARD_OPT}
-      ${MAIN_COMPILER_CXXFLAGS}
-      - build_type=${BUNDLE_CMAKE_BUILD_TYPE}
-    mu2e-pcie-utils:
-      require:
-      - '@${MU2E_PCIE_UTILS_VERSION}'
       - '%${MAIN_COMPILER_SPEC}'
       ${MAIN_COMPILER_CXX_STANDARD_OPT}
       ${MAIN_COMPILER_CXXFLAGS}
@@ -484,18 +466,6 @@ ${EXTRA_ENV_CONFIG}
     vdt:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
-    veccore:
-      require:
-      - '@${VECCORE_SPACK_VERSION}'
-      - '%${NATIVE_COMPILER_SPEC}'
-      - build_type=Release
-    vecgeom:
-      require:
-      - '@${VECGEOM_SPACK_VERSION}'
-      - '%${MAIN_COMPILER_SPEC}'
-      ${MAIN_COMPILER_CXX_STANDARD_OPT}
-      ${MAIN_COMPILER_CXXFLAGS}
-      - build_type=Release
     xerces-c:
       require:
       - builtin.xerces-c
