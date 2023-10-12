@@ -24,7 +24,6 @@ spack:
   - cry
   - $geant4
   - ifdh-art
-  - $root
   view:
     default:
       root: .spack-env/view/default

@@ -29,7 +29,6 @@ spack:
   - ifdh-art
   - data-dispatcher
   - mu2e-pcie-utils
-  - $root
   view:
     default:
       root: .spack-env/view/default

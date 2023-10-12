@@ -19,15 +19,12 @@ spack:
     -
       - artdaq-core
       - art-root-io
-      - btrk
       - gallery
-      - kinkal
+      - nutools
     - - $^root
   - cry
   - $geant4
   - ifdh-art
-  - data-dispatcher
-  - $root
   view:
     default:
       root: .spack-env/view/default
@@ -57,13 +54,6 @@ ${EXTRA_ENV_CONFIG}
     artdaq-core:
       require:
       - '@${ARTDAQ_CORE_VERSION}'
-      - '%${MAIN_COMPILER_SPEC}'
-      ${MAIN_COMPILER_CXX_STANDARD_OPT}
-      ${MAIN_COMPILER_CXXFLAGS}
-      - build_type=${BUNDLE_CMAKE_BUILD_TYPE}
-    artdaq-core-mu2e:
-      require:
-      - '@${ARTDAQ_CORE_MU2E_VERSION}'
       - '%${MAIN_COMPILER_SPEC}'
       ${MAIN_COMPILER_CXX_STANDARD_OPT}
       ${MAIN_COMPILER_CXXFLAGS}
@@ -484,6 +474,10 @@ ${EXTRA_ENV_CONFIG}
       - '+mf~kmod'
       - '@${TRACE_VERSION}'
       - '%${NATIVE_COMPILER_SPEC}'
+    triton:
+      require:
+      - '@${TRITON_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
     unuran:
       require:
       - '%${NATIVE_COMPILER_SPEC}'

@@ -26,7 +26,6 @@ spack:
   - hep-concurrency
   - cetlib-except
   - cetmodules
-  - $root
   view:
     default:
       root: .spack-env/view/default
