@@ -160,9 +160,6 @@ ${EXTRA_ENV_CONFIG}
       require:
       - '@${EXPAT_SPACK_VERSION}'
       - '%${MAIN_COMPILER_SPEC}'
-      ${MAIN_COMPILER_CXX_STANDARD_OPT}
-      ${MAIN_COMPILER_CXXFLAGS}
-      - build_type=Release
     fftw:
       require:
       - '~mpi+openmp'
