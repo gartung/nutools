@@ -79,12 +79,6 @@ ${EXTRA_ENV_CONFIG}
       - '%${MAIN_COMPILER_SPEC}'
       ${MAIN_COMPILER_CXX_STANDARD_OPT}
       ${MAIN_COMPILER_CXXFLAGS}
-    btrk:
-      require:
-      - '@${BTRK_SPACK_VERSION}'
-      - '%${MAIN_COMPILER_SPEC}'
-      ${MAIN_COMPILER_CXX_STANDARD_OPT}
-      ${MAIN_COMPILER_CXXFLAGS}
     cairo:
       require:
       - '+X+gobject+png'
