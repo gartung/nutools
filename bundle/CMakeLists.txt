@@ -112,23 +112,23 @@ create_version_variables( hub v2_14_2 )
 set(suite_rc_level)
 set(stack_suffix c) # Reset when no longer needed
 set(art_suffix c) # Reset when no longer needed
-create_version_variables(canvas v3_14_00)
+create_version_variables(canvas v3_15_02)
 create_version_variables(canvas_stack ${CANVAS_VERSION}${stack_suffix})
 create_version_variables(studio v1_02_00)
-create_version_variables(canvas_root_io v1_11_02)
-create_version_variables(art v3_12_00)
+create_version_variables(canvas_root_io v1_12_03)
+create_version_variables(art v3_13_02)
 create_version_variables(art_suite NAME art ${ART_VERSION}${art_suffix})
-create_version_variables(art_root_io v1_11_03)
+create_version_variables(art_root_io v1_12_04)
 
 # lite framework
-create_version_variables(gallery v1_20_02)
+create_version_variables(gallery v1_21_03)
 
 # Tutorial
 create_version_variables(toyExperiment v0_08_03)
 
 create_version_variables(cry v1_7p)
 create_version_variables(TRACE v3_17_09)
-create_version_variables(artdaq_core v3_09_11)
+create_version_variables(artdaq_core v3_09_12)
 
 create_version_variables(gmp v6_2_1)
 create_version_variables(gdb v13_1)
@@ -175,15 +175,16 @@ create_version_variables(libxslt v1_1_34a)
 create_version_variables(lxml v4_8_0)
 
 # geant4
-create_version_variables(geant4 v4_10_7_p04f SPACK_VERSION 10.7.4)
+create_version_variables(geant4 v4_11_1_p02 SPACK_VERSION 11.1.2)
+create_version_variables(expat v2_5_0 SPACK_VERSION 2.5.0)
 create_version_variables(xerces_c v3_2_3e)
 create_version_variables(veccore v0_8_1)
-create_version_variables(vecgeom v1_2_2a)
+create_version_variables(vecgeom v1_2_2a SPACK_VERSION 1.2.2:)
 create_version_variables(qt v5_15_9a SPACK_VERSION 5.15.5:)
 create_version_variables(g4abla v3_1)
-create_version_variables(g4emlow v7_13)
-create_version_variables(g4neutron v4_6)
-create_version_variables(g4particlexs v3_1_1)
+create_version_variables(g4emlow v8_2)
+create_version_variables(g4neutron v4_7)
+create_version_variables(g4particlexs v4_0)
 create_version_variables(g4nucleonxs v2_0)
 create_version_variables(g4nuclide v2_3)
 create_version_variables(g4photon v5_7)

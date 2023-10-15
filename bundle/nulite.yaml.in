@@ -20,6 +20,10 @@ spack:
       - artdaq-core
       - art-root-io
       - gallery
+      - nug4
+      - nugen
+      - nurandom
+      - nusimdata
       - nutools
     - - $^root
   - cry
@@ -151,6 +155,13 @@ ${EXTRA_ENV_CONFIG}
     doxygen:
       require:
       - '%${MAIN_COMPILER_SPEC}'
+      - build_type=Release
+    expat:
+      require:
+      - '@${EXPAT_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
       - build_type=Release
     fftw:
       require:
@@ -321,6 +332,10 @@ ${EXTRA_ENV_CONFIG}
     libxft:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
+    libxml2: 
+      require:
+      - '@=2.9.12'
+      - '%${MAIN_COMPILER_SPEC}'
     libxpm:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
@@ -362,6 +377,36 @@ ${EXTRA_ENV_CONFIG}
     nucondb:
       require:
       - '@${NUCONDB_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    nug4:
+      require:
+      - '@${NUG4_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    nugen:
+      require:
+      - '@${NUGEN_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    nurandom:
+      require:
+      - '@${NURANDOM_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    nusimdata:
+      require:
+      - '@${NUSIMDATA_SPACK_VERSION}'
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXX_STANDARD_OPT}
+      ${MAIN_COMPILER_CXXFLAGS}
+    nutools:
+      require:
+      - '@${NUTOOLS_SPACK_VERSION}'
       - '%${MAIN_COMPILER_SPEC}'
       ${MAIN_COMPILER_CXX_STANDARD_OPT}
       ${MAIN_COMPILER_CXXFLAGS}
@@ -436,7 +481,7 @@ ${EXTRA_ENV_CONFIG}
       ${MAIN_COMPILER_CXXFLAGS}
     root:
       require:
-      - '~davix+emacs+fftw+mlp+http+postgres+root7+spectrum+sqlite+ssl+webgui'
+      - '~davix+emacs+fftw+http+mlp+postgres+pythia6+root7+spectrum+sqlite+ssl+webgui'
       - '@${ROOT_SPACK_VERSION}'
       - '%${MAIN_COMPILER_SPEC}'
       ${MAIN_COMPILER_CXX_STANDARD_OPT}
