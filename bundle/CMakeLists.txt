@@ -523,7 +523,7 @@ foreach(compiler_label ${SPACK_SUPPORTED_COMPILERS})
   endif()
   foreach(build_type ${SPACK_BUILD_TYPES})
     set_cmake_build_type(${build_type} BUNDLE_CMAKE_BUILD_TYPE)
-    foreach(env_name critic geant4 mu_dist muse_dist nulite)
+    foreach(env_name critic geant4 nulite)
       spack_environment(${env_name}
         EXTRA_SPEC ${MAIN_COMPILER_SPEC} ${cxxstd_label} ${build_type} ${NATIVE_COMPILER_SPEC}
       )
