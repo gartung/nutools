@@ -494,7 +494,7 @@ ${EXTRA_ENV_CONFIG}
       - '%${NATIVE_COMPILER_SPEC}'
     triton:
       require:
-      - '@${TRITON_VERSION}'
+      - '@${TRITON_SPACK_VERSION}'
       - '%${MAIN_COMPILER_SPEC}'
     unuran:
       require:
