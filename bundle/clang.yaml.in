@@ -74,6 +74,9 @@ ${EXTRA_ENV_CONFIG}
       - '~ipo+gmp'
       - '%${SECONDARY_COMPILER_SPEC}'
       - build_type=Release
+    zlib-api:
+      require:
+      - zlib
     zstd:
       require:
       - '%${NATIVE_COMPILER_SPEC}'

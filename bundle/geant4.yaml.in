@@ -166,3 +166,6 @@ ${EXTRA_ENV_CONFIG}
       - '%${MAIN_COMPILER_SPEC}'
       ${MAIN_COMPILER_CXX_STANDARD_OPT}
       ${MAIN_COMPILER_CXXFLAGS}
+    zlib-api:
+      require:
+      - zlib

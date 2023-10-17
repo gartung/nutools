@@ -531,6 +531,9 @@ ${EXTRA_ENV_CONFIG}
     xz:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
+    zlib-api:
+      require:
+      - zlib
     zstd:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
