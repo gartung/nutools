@@ -459,6 +459,8 @@ function(spack_environment ENV)
         - libc
         'rpc:':
         - libc
+        'zlib-api':
+	- zlib
       variants:
         - generator=ninja")
   # Configure spack environment file.
