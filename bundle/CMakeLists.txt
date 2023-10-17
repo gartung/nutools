@@ -361,7 +361,7 @@ create_version_variables(grpc v1_35_0b)
 #create_version_variables(opencv v4_7_0a)
 create_version_variables(libtorch v1_13_1b)
 create_version_variables(libtorch_dist NAME libtorch ${LIBTORCH_VERSION})
-create_version_variables(triton v2_25_0b TRITON_SPACK_VERSION 2.25.0)
+create_version_variables(triton v2_25_0b SPACK_VERSION 2.25.0)
 create_version_variables(triton_dist NAME triton ${TRITON_VERSION})
 
 # TAUOLA C++ and friends
