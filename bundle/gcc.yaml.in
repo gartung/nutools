@@ -67,6 +67,9 @@ ${EXTRA_ENV_CONFIG}
     zlib:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
+    zlib-api:
+      require:
+      - zlib
     zstd:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
