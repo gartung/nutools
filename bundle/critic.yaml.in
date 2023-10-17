@@ -100,7 +100,7 @@ ${EXTRA_ENV_CONFIG}
       - build_type=${BUNDLE_CMAKE_BUILD_TYPE}
     cetmodules:
       require:
-      - '~versioned-docs'
+      - '+versioned-docs'
       - '@${CETMODULES_SPACK_VERSION}'
       - '%${NATIVE_COMPILER_SPEC}'
       - build_type=Release
@@ -342,7 +342,7 @@ ${EXTRA_ENV_CONFIG}
       ${MAIN_COMPILER_CXXFLAGS}
     root:
       require:
-      - '~davix+emacs+fftw+mlp+http+postgres+root7+spectrum+sqlite+ssl+webgui'
+      - '~davix+emacs+fftw+http+mlp+postgres+pythia6+root7+spectrum+sqlite+ssl+webgui'
       - '@${ROOT_SPACK_VERSION}'
       - '%${MAIN_COMPILER_SPEC}'
       ${MAIN_COMPILER_CXX_STANDARD_OPT}
