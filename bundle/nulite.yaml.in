@@ -29,17 +29,7 @@ spack:
   - cry
   - $geant4
   - ifdh-art
-  view:
-    default:
-      root: .spack-env/view/default
-      exclude: ['^root+opengl+x', '+qt', '+opengl+x']
-      link_type: symlink
-      link: all
-    G4+QT-Root+X11+opengl:
-      root: .spack-env/view/QT-X11
-      exclude: ['^root~opengl~x', '~qt', '~opengl~x']
-      link_type: symlink
-      link: all
+  view: false
 ${EXTRA_ENV_CONFIG}
     art:
       require:

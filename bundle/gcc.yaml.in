@@ -9,7 +9,7 @@ spack:
   specs:
   - >-
     ${MAIN_COMPILER_BUILD_SPEC} %${NATIVE_COMPILER_SPEC}
-  view: true
+  view: false
 ${EXTRA_ENV_CONFIG}
     autoconf:
       require:

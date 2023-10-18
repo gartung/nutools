@@ -26,17 +26,7 @@ spack:
   - hep-concurrency
   - cetlib-except
   - cetmodules
-  view:
-    default:
-      root: .spack-env/view/default
-      exclude: ['^root+opengl+x', '+opengl+x']
-      link_type: symlink
-      link: all
-    Root-X11:
-      root: .spack-env/view/root-X11
-      exclude: ['^root~opengl~x', '~opengl~x']
-      link_type: symlink
-      link: all
+  view: false
 ${EXTRA_ENV_CONFIG}
     art:
       require:
