@@ -90,11 +90,9 @@ ${EXTRA_ENV_CONFIG}
       - build_type=${BUNDLE_CMAKE_BUILD_TYPE}
     cetmodules:
       require:
-      - '+versioned-docs'
       - '@${CETMODULES_SPACK_VERSION}'
       - '%${NATIVE_COMPILER_SPEC}'
       - build_type=Release
-      - '^builtin.py-sphinxcontrib-moderncmakedomain'
     clhep:
       require:
       - '@${CLHEP_SPACK_VERSION}'
