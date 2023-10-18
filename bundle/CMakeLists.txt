@@ -178,7 +178,7 @@ create_version_variables(lxml v4_8_0)
 create_version_variables(geant4 v4_10_6_p01f SPACK_VERSION 10.6.1)
 create_version_variables(xerces_c v3_2_3c)
 create_version_variables(vecgeom v01_01_05c SPACK_VERSION 1.2.2:)
-create_version_variables(qt v5_12_3a SPACK_VERSION 5.12.3:)
+create_version_variables(qt v5_15_9a SPACK_VERSION 5.15.9:)
 create_version_variables(expat v2_5_0 SPACK_VERSION 2.5.0:)
 create_version_variables(g4abla v3_1)
 create_version_variables(g4emlow v7_9_1)
@@ -266,6 +266,7 @@ create_version_variables(muse_dist NAME muse-ext ${ART_VERSION}${stack_suffix})
 create_version_variables(nutools v3_15_03)
 create_version_variables(nulite ${NUTOOLS_VERSION})
 
+create_version_variables(packages ${BUNDLE_VERSION_SET})
 # Tutorial
 create_version_variables(toyExperiment v0_09_04)
 
@@ -522,7 +523,7 @@ foreach(compiler_label ${SPACK_SUPPORTED_COMPILERS})
   endif()
   foreach(build_type ${SPACK_BUILD_TYPES})
     set_cmake_build_type(${build_type} BUNDLE_CMAKE_BUILD_TYPE)
-    foreach(env_name critic geant4 nulite)
+    foreach(env_name critic geant4 nulite packages)
       spack_environment(${env_name}
         EXTRA_SPEC ${MAIN_COMPILER_SPEC} ${cxxstd_label} ${build_type} ${NATIVE_COMPILER_SPEC}
       )

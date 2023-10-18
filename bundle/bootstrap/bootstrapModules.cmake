@@ -451,18 +451,8 @@ function(spack_environment ENV)
   endif()
   set(EXTRA_ENV_CONFIG "  concretizer:
     unify: when_possible
-    reuse: true
-  packages:
-    all:
-      providers:
-        'iconv:':
-        - libc
-        'rpc:':
-        - libc
-        'zlib-api':
-        - zlib
-      variants:
-        - generator=ninja")
+    reuse: true"
+    )
   # Configure spack environment file.
   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/${env_stem}${SE_SUFFIX}.yaml.in"
     "${CMAKE_CURRENT_BINARY_DIR}/${ENV_BUILD_SPEC_YAML}")
