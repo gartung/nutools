@@ -149,10 +149,6 @@ ${EXTRA_ENV_CONFIG}
       require:
       - '%${MAIN_COMPILER_SPEC}'
       - build_type=Release
-    expat:
-      require:
-      - '@${EXPAT_SPACK_VERSION}'
-      - '%${MAIN_COMPILER_SPEC}'
     fftw:
       require:
       - '~mpi+openmp'
