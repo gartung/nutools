@@ -16,6 +16,26 @@ spack:
         - geant4 +vecgeom +qt
         - geant4 +threads +qt
   view: false
+#    default:
+#      root: .spack-env/view/default
+#      exclude: ['+qt+threads+vecgeom']
+#      link_type: symlink
+#      link: all
+#    G4-vecgeom:
+#      root: .spack-env/view/G4-vecgeom
+#      exclude: ['~vecgeom']
+#      link_type: symlink
+#      link: all
+#    G4-threads:
+#      root: .spack-env/view/G4-vecgeom
+#      exclude: ['~threads']
+#      link_type: symlink
+#      link: all
+#    G4-QT:
+#      root: .spack-env/view/G4-QT
+#      exclude: ['~qt']
+#      link_type: symlink
+#      link: all
 ${EXTRA_ENV_CONFIG}
     assimp:
       require:
