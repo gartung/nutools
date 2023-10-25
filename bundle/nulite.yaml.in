@@ -163,6 +163,9 @@ ${EXTRA_ENV_CONFIG}
     flex:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
+    fontconfig:
+      require:
+      - '%${NATIVE_COMPILER_SPEC}'
     freetype:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
