@@ -451,6 +451,10 @@ ${EXTRA_ENV_CONFIG}
     py-wheel:
       require:
       - '%${NATIVE_COMPILER_SPEC}'
+    pythia8:
+      require:
+      - '%${MAIN_COMPILER_SPEC}'
+      ${MAIN_COMPILER_CXXFLAGS}
     python:
       require:
       - '@${PYTHON_SPACK_VERSION}'
