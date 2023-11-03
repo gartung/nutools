@@ -20,6 +20,7 @@ spack:
     - - $^root
   - art
   - canvas
+  - ${MAIN_COMPILER_BUILD_SPEC} %${NATIVE_COMPILER_SPEC}
   - messagefacility
   - fhicl-cpp
   - cetlib
