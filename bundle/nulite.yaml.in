@@ -30,7 +30,7 @@ spack:
   - ${MAIN_COMPILER_BUILD_SPEC} %${NATIVE_COMPILER_SPEC}
   - $geant4
   - ifdh-art
-  view: false
+  view:
     default:
       root: .spack-env/view/default
       exclude: ['^root+opengl+x', '~qt', '+opengl+x']
