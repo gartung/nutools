@@ -9,11 +9,11 @@ spack:
   - geant4:
     - matrix:
       - - builtin.geant4 ~threads ~vecgeom
-      - ['+qt', '~qt']
+      - ['~qt']
   - root:
     - matrix:
       - - root
-      - ['+opengl+x', '~opengl~x']
+      - ['+opengl+x']
   specs:
   - matrix:
     -
@@ -31,16 +31,11 @@ spack:
   - $geant4
   - ifdh-art
   view: false
-#    default:
-#      root: .spack-env/view/default
-#      exclude: ['^root+opengl+x', '+qt', '+opengl+x']
-#      link_type: symlink
-#      link: all
-#    G4+QT-Root+X11+opengl:
-#      root: .spack-env/view/QT-X11
-#      exclude: ['^root~opengl~x', '~qt', '~opengl~x']
-#      link_type: symlink
-#      link: all
+    default:
+      root: .spack-env/view/default
+      exclude: ['^root+opengl+x', '~qt', '+opengl+x']
+      link_type: symlink
+      link: all
 ${EXTRA_ENV_CONFIG}
     art:
       require:
